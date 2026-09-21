@@ -1,0 +1,110 @@
+﻿
+██████████████████████████████████████████████████████████████████████
+   HYBRID TFT-MODFLOW PIPELINE
+   Physics-Informed Deep Learning for Groundwater Prediction
+██████████████████████████████████████████████████████████████████████
+
+  Device: cpu
+======================================================================
+     LOADING DATA (HYBRID)
+======================================================================
+
+  Train:  2464 | Val: 730 | Test: 712
+  ✓ Loaded MODFLOW predictions: 132 records
+    Columns: ['date', 'observed_depth_ft', 'simulated_depth_ft', 'residual_ft', 'split']
+  ✓ Loaded scalers
+
+  Distribution Check:
+    Train:  mean=0.0000, std=1.0002
+    Val:    mean=1.7960
+    Test:  mean=1.9010
+
+  ⚠ WARNING:  Significant distribution shift detected!
+    MODFLOW physics prior will help the model adapt.
+
+======================================================================
+     PREPARING DATA FOR HYBRID TFT
+======================================================================
+
+  Interpolating MODFLOW predictions to daily resolution...
+    Using MODFLOW column: simulated_depth_ft
+    ✓ MODFLOW predictions merged:  3906 records
+
+  Scaling MODFLOW predictions to match target scale...
+    Target (train-only):  mean=0.0000, std=1.0002
+    MODFLOW (train-only, original): mean=38.1755, std=0.3247
+    MODFLOW (scaled): mean=1.0109, std=1.5826
+
+  Adding lag features...
+    Added target lags and rolling stats
+    Added MODFLOW features (key physics prior)
+
+  Identifying features...
+    Known features: 4
+    Unknown features: 15
+    Feature list:
+      - modflow_scaled
+      - modflow_lag_1
+      - modflow_lag_7
+      - modflow_rmean_7
+      - modflow_residual_lag_1
+      - water_level_lag_1
+      - water_level_lag_7
+      - water_level_lag_14
+      - water_level_rmean_7
+      - water_level_rmean_14
+      - water_level_diff
+      - total_precipitation_sum
+      - evaporation_sum
+      - 2m_temperature_mean
+      - surface_pressure_mean
+
+  Total records: 3906
+  Train cutoff idx: 2463
+  Val cutoff idx: 3193
+
+======================================================================
+     CREATING DATASETS (HYBRID)
+======================================================================
+
+  Encoder length: 90
+  Prediction length: 1
+  Min valid idx: 90
+  Train cutoff: 2463
+  Val cutoff: 3193
+
+  Training data points: 2373
+
+  Training dataset samples: 2373
+  Validation dataset samples: 820
+  Test dataset samples: 802
+
+  Train batches: 3
+  Val batches: 1
+  Test batches:  1
+
+======================================================================
+     BUILDING HYBRID TFT-MODFLOW MODEL
+======================================================================
+
+  Model parameters: 2,121,269
+
+======================================================================
+     TRAINING HYBRID TFT-MODFLOW MODEL (IMPROVED)
+======================================================================
+
+  Device: cpu
+  Max epochs: 300
+  Min epochs before early stopping: 60
+  Patience:  60
+  Learning rate: 0.0001
+  Warmup epochs: 10
+  Gradient accumulation steps: 2
+  Train batches: 3
+  Val batches: 1
+  Epoch   1/300:   Train=1.0914, Val=2.9950, Val_RMSE=2.2648, LR=0.000020
+  Epoch   1:  ✓ New best = 2.9950 (warmup)
+  Epoch   2:  ✓ New best = 2.8281 (warmup)
+  Epoch   3:  ✓ New best = 2.5923 (warmup)
+  Epoch   4:  ✓ New best = 2.3048 (warmup)
+  Epoch   5:  ✓ New best = 1.9873 (warmup)

@@ -1,0 +1,16 @@
+\begin{table}[htbp]
+\centering
+\caption{Diebold--Mariano tests (test period, h = 1, Newey--West HAC variance with Harvey--Leybourne--Newbold correction). Negative DM: first model more accurate. SE = squared error, AE = absolute error; two-sided p-values.}
+\label{tab:dm_test}
+\begin{tabular}{lrrrr}
+\hline
+Comparison & DM (SE) & p (SE) & DM (AE) & p (AE) \\
+\hline
+Hybrid TFT-MODFLOW vs AR(1) & -5.12 & <0.001 & -3.35 & <0.001 \\
+Hybrid TFT-MODFLOW vs AR(6) [BIC] & -3.13 & 0.002 & -1.79 & 0.073 \\
+Hybrid TFT-MODFLOW vs AR(7) & -2.70 & 0.007 & -1.27 & 0.205 \\
+Hybrid TFT-MODFLOW vs Persistence & -5.24 & <0.001 & -2.04 & 0.042 \\
+Hybrid TFT-MODFLOW vs Seasonal persistence (365 d) & -9.16 & <0.001 & -13.58 & <0.001 \\
+\hline
+\end{tabular}
+\end{table}

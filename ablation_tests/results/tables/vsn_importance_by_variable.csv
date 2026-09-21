@@ -1,0 +1,25 @@
+variable,TFT (no MODFLOW),TFT + MODFLOW input,Complete hybrid
+2m_temperature_mean,3.81,1.16,5.04
+doy_cos,5.41,8.7,2.7
+doy_sin,7.27,4.33,4.45
+evaporation_sum,10.53,1.86,1.78
+modflow_lag_1,,,1.8
+modflow_lag_7,,,1.34
+modflow_residual_lag_1,,,5.27
+modflow_rmean_7,,,0.45
+modflow_scaled,,0.81,6.01
+month_cos,13.8,3.0,4.4
+month_sin,1.52,1.17,2.2
+relative_time_idx,7.53,2.52,2.69
+surface_pressure_mean,0.96,3.94,4.98
+total_precipitation_sum,2.14,2.04,15.22
+water_level_diff,6.49,0.69,2.28
+water_level_lag_1,1.95,8.25,1.04
+water_level_lag_14,1.16,1.17,4.0
+water_level_lag_7,10.77,1.91,17.48
+water_level_rmean_14,0.79,21.06,0.19
+water_level_rmean_180,2.29,2.75,4.87
+water_level_rmean_7,1.19,2.39,1.42
+water_level_rmean_90,11.71,2.44,2.02
+water_level_target_delta,6.74,27.85,5.66
+water_level_trend_180,3.94,1.94,2.71

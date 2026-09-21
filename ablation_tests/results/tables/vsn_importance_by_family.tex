@@ -1,0 +1,16 @@
+\begin{table}[htbp]
+\centering
+\caption{Variable Selection Network importance grouped by variable family, as a share (\%) of each run total encoder importance.}
+\label{tab:vsn_families}
+\begin{tabular}{lrrr}
+\hline
+Variable family & TFT (no MODFLOW) & TFT + MODFLOW input & Complete hybrid \\
+\hline
+Calendar & 28.00 & 17.20 & 13.76 \\
+Climate forcing & 17.43 & 9.00 & 27.01 \\
+Dataset bookkeeping & 7.53 & 2.52 & 2.69 \\
+MODFLOW (physics prior) & 0.00 & 0.81 & 14.87 \\
+Observed water-level history & 47.04 & 70.47 & 41.67 \\
+\hline
+\end{tabular}
+\end{table}

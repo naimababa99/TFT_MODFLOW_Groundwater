@@ -1,0 +1,17 @@
+\begin{table}[htbp]
+\centering
+\caption{One-day-ahead forecast accuracy on the test period (measured days only). Skill is relative to persistence; all models are scored on identical days.}
+\label{tab:benchmarks_test_measured_days}
+\begin{tabular}{lrrrrrrr}
+\hline
+Model & n & RMSE (ft) & MAE (ft) & Bias (ft) & NSE & MSE skill vs persistence (\%) & R2 on daily change \\
+\hline
+Hybrid TFT-MODFLOW & 690.0000 & 0.0122 & 0.0093 & 0.0018 & 0.9934 & 19.5837 & 0.1936 \\
+AR(7) & 690.0000 & 0.0127 & 0.0094 & 0.0012 & 0.9928 & 12.8298 & 0.1259 \\
+AR(6) [BIC] & 690.0000 & 0.0128 & 0.0095 & 0.0010 & 0.9927 & 11.2404 & 0.1099 \\
+AR(1) & 690.0000 & 0.0136 & 0.0099 & -0.0000 & 0.9918 & 0.3516 & 0.0007 \\
+Persistence & 690.0000 & 0.0136 & 0.0097 & 0.0007 & 0.9918 & 0.0000 & -0.0028 \\
+Seasonal persistence (365 d) & 690.0000 & 0.2062 & 0.1675 & 0.1128 & -0.8887 & -22851.3791 & -229.1533 \\
+\hline
+\end{tabular}
+\end{table}

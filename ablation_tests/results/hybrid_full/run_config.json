@@ -1,0 +1,49 @@
+{
+  "modflow_feature_mode": "full",
+  "model_dir": "ablation_tests/results/hybrid_full",
+  "modflow_path": "models/modflow_enhanced/enhanced_predictions.csv",
+  "unknown_features": [
+    "modflow_scaled",
+    "modflow_lag_1",
+    "modflow_lag_7",
+    "modflow_rmean_7",
+    "modflow_residual_lag_1",
+    "water_level_lag_1",
+    "water_level_lag_7",
+    "water_level_lag_14",
+    "water_level_rmean_7",
+    "water_level_rmean_14",
+    "water_level_diff",
+    "water_level_rmean_90",
+    "water_level_rmean_180",
+    "water_level_trend_180",
+    "total_precipitation_sum",
+    "evaporation_sum",
+    "2m_temperature_mean",
+    "surface_pressure_mean"
+  ],
+  "known_features": [
+    "month_sin",
+    "month_cos",
+    "doy_sin",
+    "doy_cos"
+  ],
+  "n_modflow_features": 5,
+  "max_encoder_length": 90,
+  "hidden_size": 128,
+  "batch_size": 616,
+  "epochs_run": 289,
+  "best_val_loss": 0.008713307790458202,
+  "test_metrics": {
+    "RMSE": 0.027124238298588087,
+    "MAE": 0.020489118480531688,
+    "R2": 0.9933505905129513,
+    "NSE": 0.9933505905129513
+  },
+  "val_metrics": {
+    "RMSE": 0.03280214323932506,
+    "MAE": 0.024293047564793124,
+    "R2": 0.9898055397633673,
+    "NSE": 0.9898055397633673
+  }
+}

@@ -1,0 +1,15 @@
+\begin{table}[htbp]
+\centering
+\caption{MODFLOW ablation ladder on measured days only (gap-filled USGS days excluded).}
+\label{tab:ablation_test_measured}
+\begin{tabular}{lrrrrrrrr}
+\hline
+Configuration & n & RMSE (ft) & MAE (ft) & Bias (ft) & NSE & Skill vs persistence (\%) & Skill vs no-MODFLOW (\%) & R2 on daily change \\
+\hline
+TFT (no MODFLOW) & 690.0000 & 0.0124 & 0.0094 & 0.0004 & 0.9932 & 16.8132 & 0.0000 & 0.1658 \\
+TFT + MODFLOW input & 690.0000 & 0.0122 & 0.0093 & 0.0020 & 0.9934 & 19.4596 & 3.1813 & 0.1924 \\
+Complete hybrid & 690.0000 & 0.0123 & 0.0093 & 0.0016 & 0.9933 & 18.2250 & 1.6971 & 0.1800 \\
+Persistence & 690.0000 & 0.0136 & 0.0097 & 0.0007 & 0.9918 & 0.0000 & -20.2114 & -0.0028 \\
+\hline
+\end{tabular}
+\end{table}

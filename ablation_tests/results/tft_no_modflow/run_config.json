@@ -1,0 +1,44 @@
+{
+  "modflow_feature_mode": "none",
+  "model_dir": "ablation_tests/results/tft_no_modflow",
+  "modflow_path": "models/modflow_enhanced/enhanced_predictions.csv",
+  "unknown_features": [
+    "water_level_lag_1",
+    "water_level_lag_7",
+    "water_level_lag_14",
+    "water_level_rmean_7",
+    "water_level_rmean_14",
+    "water_level_diff",
+    "water_level_rmean_90",
+    "water_level_rmean_180",
+    "water_level_trend_180",
+    "total_precipitation_sum",
+    "evaporation_sum",
+    "2m_temperature_mean",
+    "surface_pressure_mean"
+  ],
+  "known_features": [
+    "month_sin",
+    "month_cos",
+    "doy_sin",
+    "doy_cos"
+  ],
+  "n_modflow_features": 0,
+  "max_encoder_length": 90,
+  "hidden_size": 128,
+  "batch_size": 616,
+  "epochs_run": 186,
+  "best_val_loss": 0.00861275289207697,
+  "test_metrics": {
+    "RMSE": 0.027611388656899705,
+    "MAE": 0.02077929048505978,
+    "R2": 0.9931095993599118,
+    "NSE": 0.9931095993599118
+  },
+  "val_metrics": {
+    "RMSE": 0.032584714911752195,
+    "MAE": 0.024210381021799697,
+    "R2": 0.9899402393894181,
+    "NSE": 0.9899402393894181
+  }
+}

@@ -1,0 +1,7 @@
+comparison,DM (SE),p (SE),DM (AE),p (AE)
+Complete hybrid vs Persistence,-6.15,<0.001,-2.49,0.013
+TFT (no MODFLOW) vs Complete hybrid,0.90,0.367,1.00,0.319
+TFT (no MODFLOW) vs Persistence,-4.54,<0.001,-1.03,0.305
+TFT (no MODFLOW) vs TFT + MODFLOW input,1.53,0.127,0.59,0.558
+TFT + MODFLOW input vs Complete hybrid,-0.46,0.648,0.68,0.495
+TFT + MODFLOW input vs Persistence,-4.63,<0.001,-1.34,0.181
