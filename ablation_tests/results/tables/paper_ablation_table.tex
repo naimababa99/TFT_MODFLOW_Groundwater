@@ -1,0 +1,23 @@
+\begin{table*}[t]
+\centering
+\caption{Ablation study results on the independent test set (2024--2025), scored on the same 712 days. Values reported as mean $\pm$ standard deviation across independent random seeds (1, 2, 3, 42); the number of runs behind each row is TFT (no MODFLOW): n\,=\,4; TFT + MODFLOW input: n\,=\,1; Complete hybrid: n\,=\,3. MSE skill score is relative to the persistence baseline. DM: Diebold-Mariano test $p$-value vs no-MODFLOW configuration.}
+\label{tab:ablation}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular*}{\textwidth}{
+@{\extracolsep\fill}lcccc
+@{\extracolsep\fill}}
+\toprule
+\textbf{Configuration} & 
+\textbf{R\textsuperscript{2}} & 
+\textbf{RMSE (ft)} & 
+\textbf{MSE skill (\%)} &
+\textbf{DM $p$} \\
+\midrule
+Persistence (lag-1) & 0.9919 & 0.0135 & 0\% & --- \\[4pt]
+TFT (no MODFLOW) & 0.9933$\pm$0.0001 & 0.0123$\pm$0.0001 & 17.3$\pm$1.2 & --- \\[4pt]
+TFT + MODFLOW input & 0.9934 & 0.0122 & 18.8 & 0.046 \\[4pt]
+Complete hybrid & 0.9931$\pm$0.0003 & 0.0125$\pm$0.0003 & 14.7$\pm$3.6 & 0.367$^{\dagger}$ \\
+\bottomrule
+\multicolumn{5}{l}{\footnotesize MSE skill = 1 $-$ MSE/MSE$_{\text{persistence}}$. DM $p$-values test each configuration against TFT (no MODFLOW) under squared error loss, $h=1$, Newey--West HAC variance with the Harvey--Leybourne--Newbold correction. $^{\dagger}$median over seed-matched pairs.}
+\end{tabular*}
+\end{table*}
