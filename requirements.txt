@@ -1,0 +1,29 @@
+# Hybrid TFT-MODFLOW groundwater forecasting -- Python dependencies
+#
+# Developed and run on Python 3.11.9 (Windows 10), CPU only.
+#
+# Lower bounds rather than exact pins, because pytorch_forecasting is strict
+# about its torch/lightning range and hard pins here tend to make a fresh
+# install unsolvable. The versions actually used for the reported runs are
+# noted after each line; install those exactly if you need to match bit-for-bit.
+
+# --- Core scientific stack ---
+numpy>=1.26            # used: 2.3.2
+pandas>=2.0            # used: 2.3.1
+scipy>=1.11            # used: 1.16.1  (differential_evolution, qmc, DM tests)
+scikit-learn>=1.3      # used: 1.7.1   (StandardScaler)
+joblib>=1.3            # used: 1.5.1   (scalers, calibrated parameters)
+matplotlib>=3.7        # used: 3.10.3
+
+# --- Deep learning: Stage 2, the hybrid TFT ---
+torch>=2.0             # used: 2.8.0+cpu
+lightning>=2.0         # used: 2.5.5
+pytorch-forecasting>=1.0   # TemporalFusionTransformer, TimeSeriesDataSet, QuantileLoss
+
+# --- Groundwater modelling: Stage 1 ---
+# Python interface only. The MODFLOW-2005 executable itself is NOT a pip
+# package -- see the "MODFLOW-2005 executable" section of README.md.
+flopy>=3.9             # used: 3.9.3
+
+# --- Notebooks (optional; only to open the .ipynb files) ---
+jupyter
